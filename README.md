@@ -71,7 +71,7 @@ If you just want to show your appreciation, you can send a donation through [Pay
 ## Toolkit structure
 ### Runtime/
 * [ArrayE](/Runtime/ArrayE.cs): Various Array and List extensions, such as looped getters/setters and flood fills.
-* [CellularAutomaton](/Runtime/CellularAutomaton.cs): Generic cellular automaton for two-state rulesets. 
+* [CellularAutomaton](/Runtime/CellularAutomaton/CellularAutomatonJob.cs): Jobified Generic cellular automaton for two-state rulesets. 
 Common rulesets can be found in CellularAutomaton.Ruleset.
 * [ClipperUtility](/Runtime/ClipperUtility.cs): Utility class for conversion of Clipper data from and to Unity format.
 * [ColorE](/Runtime/ColorE.cs): Color extensions, HTML colors, Gradient constructors.
@@ -131,12 +131,12 @@ Classes used in [straight skeleton](https://en.wikipedia.org/wiki/Straight_skele
 * [StraightSkeletonGenerator](/Runtime/Geometry/StraightSkeleton/StraightSkeletonGenerator.cs): 
 A straight skeleton generator, computes a straight skeleton for the input polygon, reusable. 
 The generation algorithm is loosely based on the work of Tom Kelly (2014) 
-[Unwritten procedural modeling with the straight skeleton](http://www.twak.co.uk/2014/02/unwritten-procedural-modeling-with.html).
+[Unwritten procedural modeling with the straight skeleton] https://theses.gla.ac.uk/4975/.
 * [StraightSkeleton](/Runtime/Geometry/StraightSkeleton/StraightSkeleton.cs): A straight skeleton representation.
 * [Plan](/Runtime/Geometry/StraightSkeleton/Plan.cs): Representation of the active plan during generation process.
 
 ### Runtime/ClipperLib/
-The [Clipper](http://www.angusj.com/delphi/clipper.php) library. 
+The [Clipper](https://www.angusj.com/clipper2/Docs/Overview.htm) Clipper2 library, Clipper1 library no longer available. 
 Use [PathClipper](/Runtime/PathClipper.cs) and [PathOffsetter](/Runtime/PathOffsetter.cs) for seamless interoperability with Unity.
 
 ### Runtime/LibTessDotNet/
@@ -164,10 +164,10 @@ Or like this:
 * [VertexColor](/Shaders/VertexColor) folder: Textureless shaders for use with color information from the vertices.
 
 ### Editor/
-* [ColorHSVDrawer](/Runtime/Editor/ColorHSVDrawer.cs): PropertyDrawer for ColorHSV.
-* [MeshFilterExtension](/Runtime/Editor/MeshFilterExtension.cs): Mesh saving utility available at `MeshFilter context menu > Save Mesh`.
-* [ProceduralToolkitMenu](/Runtime/Editor/ProceduralToolkitMenu.cs): Submenu with constructors for primitives at `GameObject > Procedural Toolkit`.
-* [RulesetDrawer](/Runtime/Editor/RulesetDrawer.cs): PropertyDrawer for CellularAutomaton.Ruleset.
+* [ColorHSVDrawer](/Editor/ColorHSVDrawer.cs): PropertyDrawer for ColorHSV.
+* [MeshFilterExtension](/Editor/MeshFilterExtension.cs): Mesh saving utility available at `MeshFilter context menu > Save Mesh`.
+* [ProceduralToolkitMenu](/Editor/ProceduralToolkitMenu.cs): Submenu with constructors for primitives at `GameObject > Procedural Toolkit`.
+* [RulesetDrawer](/Editor/RulesetDrawer.cs): PropertyDrawer for CellularAutomaton.Ruleset.
 
 ### Tests/
 Tests for the library
